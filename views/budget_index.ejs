@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/normalize.css" />
+    <link rel="stylesheet" href="/skeleton.css" />
+    <title>Budgtr Index Page</title>
+</head>
+
+<nav>
+    <a href="/budget/new">Create a New Budget</a>
+</nav>
+
+<body>
+    <h1>Budget Index Page</h1>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="3">Budgtr</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+
+                <th scope="row">Date</th>
+                <th scope="row">Name</th>
+                <th scope="row">Amount</th>
+            </tr>
+
+            <% for(let i=0; i < allBudget.length; i++){ %>
+                <tr>
+                    <td>
+                        <%=allBudget[i].date %>
+                    </td>
+
+                    <td>
+                        <%=allBudget[i].name %>
+                    </td>
+                    <td>
+                        <%=allBudget[i].amount %>
+                    </td>
+
+                </tr>
+                <a href="/budget/<%=i%>"></a>
+
+                <% } %>
+
+                    </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
