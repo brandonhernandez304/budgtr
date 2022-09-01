@@ -31,6 +31,18 @@ app.get("/budget/",(req,res)=>{
 app.get("/budget/new",(req,res)=>{
     res.render("budget_new.ejs")
 })
+//D
+//U
+//CREATE
+
+//E
+//SHOW
+app.get("/budget/:id", (req,res)=>{
+    res.render("budget_show.ejs",{
+        budgetItem: budget[req.params.id]
+    })
+});
+
 //LISTEN 
 app.listen(port,()=>{
     console.log('budgtr listening on port', port)

@@ -7,8 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/normalize.css" />
     <link rel="stylesheet" href="/skeleton.css" />
-    <title>Budgtr Show Page</title>
+    <title>Budgtr App</title>
 </head>
+<header>
+    <a href="/budget/">Back to Budget Index</a>
+</header>
 <style type="text/css">
     body {
         text-align: center;
@@ -22,7 +25,19 @@
 </style>
 
 <body>
-
+    <div class="container">
+        <h1><%= budgetItem.name %></h1>
+        <h5><strong>Date</strong></h5>
+        <h5><%= budgetItem.date %></h5>
+        <h5><strong>Name</strong></h5>
+        <h5><%= budgetItem.name %></h5>
+        <h5><strong>From</strong></h5>
+        <h5><%= budgetItem.from %></h5>
+        <h5><strong>Amount</strong></h5>
+        <h5><%= budgetItem.amount %></h5>
+        <h5><strong>Tags</strong></h5>
+        <h5><%= budgetItem.strong %></h5>
+    </div>
 </body>
 
 </html>
