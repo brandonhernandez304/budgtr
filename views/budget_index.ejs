@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="/normalize.css" />
     <link rel="stylesheet" href="/skeleton.css" />
     <title>Budgtr App</title>
+    <style>
+        body{
+            background-color: burlywood;
+            color: darkolivegreen ;
+        }
+    </style>
 </head>
 
 <nav>
@@ -16,6 +22,10 @@
 
 <body>
     <h1>Budget Index Page</h1>
+    <% for (i = 0; i < allBudget.length; i++) { %>
+        <% bankAcc = bankAcc + parseInt(allBudget[i].amount) %>
+        <% } %>
+        <h2>Balance: $<%= bankAcc %></h2>
     <table>
         <thead>
             <tr>
@@ -54,5 +64,22 @@
         </tbody>
     </table>
 </body>
+<!-- time to make bankAcc -->
+<% if(bankAcc < 0) {%>
+    <style>
+        body{
+            background-color: darkred;
+            color: white;
+        }
+    </style>
+<% } %>
+<% if (bankAcc > 1000){ %>
+<style>
+    body{
+        background-color: lightblue;
+        color: g;
+    }
+</style>
+<% } %>
 
 </html>

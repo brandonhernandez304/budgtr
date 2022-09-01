@@ -1,17 +1,18 @@
 //dependencies/ packages
 const express = require("express");
 const budget = require("./model/budget.js");
-
+const bodyParser = require('body-parser')
+const bankAcc = 0;
 
 //INIT EXPRESS APP
 const app = express();
 const port = 3000;
 
 //MIDWARE
-app.use((req, res, next) => {
-    console.log("Hi, I run for all routes")
-    next()
-})
+// app.use((req, res, next) => {
+//     console.log("Hi, I run for all routes")
+//     next()
+// })
 //allows access to req.body
 app.use(express.urlencoded({ extended: false }))
 //allow access to public folder w express static
@@ -30,7 +31,9 @@ app.get("/budget/", (req, res) => {
 });
 //NEW
 app.get("/budget/new", (req, res) => {
-    res.render("budget_new.ejs")})
+    res.render("budget_new.ejs", {
+        newBudget: budget
+    })})
 //D
 //U
 //CREATE
