@@ -24,17 +24,21 @@ app.get("/", (req, res) => {
 //INDEX
 app.get("/budget/", (req, res) => {
     res.render("budget_index.ejs", {
-        allBudget: budget
+        allBudget: budget,
+        bankAcc: bankAcc,
     })
 });
 //NEW
 app.get("/budget/new", (req, res) => {
-    res.render("budget_new.ejs")
-})
+    res.render("budget_new.ejs")})
 //D
 //U
 //CREATE
-
+app.post("/budget/",(req,res)=>{
+    budget.push(req.body)
+    res.redirect("/budget")
+    // res.send("data received")
+})
 //E
 //SHOW
 app.get("/budget/:id", (req, res) => {
